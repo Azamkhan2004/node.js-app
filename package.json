@@ -1,0 +1,12 @@
+{
+  "name": "nodejs-app",
+  "version": "1.0.0",
+  "description": "Simple Node.js Express application for DevOps practice",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
