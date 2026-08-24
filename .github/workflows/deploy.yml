@@ -1,4 +1,4 @@
-name: This is a node.js application
+name: Deploy Node.js App
 
 on:
   push:
@@ -10,16 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout code
-        uses: actions/checkout@v4
-
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.ssh_host }}
-          username: root
+          username: ubuntu
           key: ${{ secrets.ssh_key }}
           script: |
             cd /home/ubuntu/node.js-app
-            git pull
+            git pull origin main
             docker compose up -d --build
