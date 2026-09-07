@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
-    res.send("Hii! This Node.js application is running successfully azam.");
+    res.send("This Node.js application is running successfully from azam22.");
 });
 
 app.get("/health", (req, res) => {
