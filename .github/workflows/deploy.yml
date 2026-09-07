@@ -19,4 +19,5 @@ jobs:
           script: |
             cd /home/ubuntu/node.js-app
             git pull origin main
-            docker compose up -d --build
+            kubectl apply -f k8s/deployment.yml
+            kubectl apply -f k8s/service.yml
