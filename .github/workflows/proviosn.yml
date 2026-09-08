@@ -1,0 +1,42 @@
+```yaml
+name: Docker Build and Run
+
+on:
+  workflow_dispatch:
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check Docker
+        run: |
+          docker --version
+
+      - name: Build Docker image
+        run: |
+          docker build -t nodejs-app:latest .
+
+      - name: Stop existing container
+        run: |
+          docker rm -f nodejs-container || true
+
+      - name: Start Docker container
+        run: |
+          docker run -d \
+            --name nodejs-container \
+            -p 3000:3000 \
+            nodejs-app:latest
+
+      - name: Check running container
+        run: |
+          docker ps
+
+      - name: Check application logs
+        run: |
+          docker logs nodejs-container
+```
