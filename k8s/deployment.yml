@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: nodejs-container
-          image: azamkhan2004/nodejs-app:latest
+          image: azamkhan2004/node-app:latest
 
           ports:
             - containerPort: 3000
