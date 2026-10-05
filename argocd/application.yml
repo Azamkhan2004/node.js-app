@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: springboot-api
+  name: nodejs-app
   namespace: argocd
 
 spec:
   project: default
 
   source:
-    repoURL: https://github.com/Azamkhan2004/springboot-api.git
+    repoURL: https://github.com/Azamkhan2004/node.js-app
     targetRevision: main
     path: k8s
 
