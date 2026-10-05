@@ -1,12 +1,12 @@
 apiVersion: argoproj.io/v1alpha1 # API version for ArgoCD Projects
 kind: AppProject               # Kind is always AppProject for Projects
 metadata:
-  name: frontend-team          # Name of the Project (unique within ArgoCD)
+  name: nodejs          # Name of the Project (unique within ArgoCD)
   namespace: argocd            # Must always be created in ArgoCD's namespace
 spec:
   description: Project for frontend team apps   # Optional description
   sourceRepos:                 # Which Git repos are allowed for this Project
-    - https://github.com/<your-username>/argocd-demos.git
+    - https://github.com/Azamkhan2004/node.js-app.git
   destinations:                # Which clusters/namespaces apps in this Project can target
     - namespace: frontend
       server: <added_argocd_cluster_server_url>  # Target cluster server url
