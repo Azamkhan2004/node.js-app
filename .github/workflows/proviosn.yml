@@ -1,4 +1,4 @@
-```yaml
+
 name: Docker Build and Run
 
 on:
@@ -39,4 +39,4 @@ jobs:
       - name: Check application logs
         run: |
           docker logs nodejs-container
-```
+
